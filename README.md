@@ -63,15 +63,122 @@
 
 ## Architecture
 ### The project follows a **modular and clean structure** to maintain readability and scalability. The main folders and their responsibilities are:
-lib
-/models # Data structures for products, users, and cart items
-/screens # UI pages: Auth, Home, Product Details, Cart, Favorites, Profile
-/services # API and Firebase logic
-/widgets # Reusable UI components
-/builds/apk # Android app-release.apk
-/docs/screenshots # Screenshots for each implemented feature
-/appium_tests # Automation scripts for Auth and Cart flows
-/video # Demo screen recording
+
+ LAZA_ECOMMERCE/
+│
+├── android/                    # Android platform specific code
+│   ├── app/
+│   │   ├── src/
+│   │   └── build.gradle.kts
+│   ├── gradle/
+│   ├── gradle.properties
+│   ├── gradlew
+│   ├── gradlew.bat
+│   ├── laza_ecommerce_android.iml
+│   ├── local.properties
+│   └── settings.gradle.kts
+│
+├── ios/                        # iOS platform specific code
+│
+├── web/                        # Web platform specific code
+│
+├── linux/                      # Linux platform specific code
+│
+├── macos/                      # macOS platform specific code
+│
+├── windows/                    # Windows platform specific code
+│
+├── lib/                        # Main Flutter application code
+│   ├── core/                   # Core utilities and constants
+│   │
+│   ├── data/                   # Data layer
+│   │   ├── datasources/       # Data sources (local, remote)
+│   │   ├── models/           # Data models/entities
+│   │   │   ├── address_model.dart
+│   │   │   ├── card_model.dart
+│   │   │   ├── cart_item_model.dart
+│   │   │   ├── order_model.dart
+│   │   │   ├── product_model.dart
+│   │   │   └── review_model.dart
+│   │   │
+│   │   └── repositories/     # Repository implementations
+│   │       ├── address_repository.dart
+│   │       ├── auth_repository.dart
+│   │       ├── card_repository.dart
+│   │       ├── cart_repository.dart
+│   │       ├── order_repository.dart
+│   │       ├── product_repository.dart
+│   │       ├── review_repository.dart
+│   │       ├── user_repository.dart
+│   │       └── wishlist_repository.dart
+│   │
+│   ├── domain/                # Domain layer (business logic)
+│   │   └── entities/         # Business entities
+│   │
+│   └── presentation/         # Presentation layer (UI)
+│       ├── providers/       # State management (Riverpod/Provider)
+│       ├── screens/         # App screens
+│       │   ├── auth/       # Authentication screens
+│       │   │   ├── forgot_password_screen.dart
+│       │   │   ├── new_password_screen.dart
+│       │   │   ├── onboarding_screen.dart
+│       │   │   ├── register_screen.dart
+│       │   │   └── verification_code_screen.dart
+│       │   │
+│       │   ├── add_card_screen.dart
+│       │   ├── add_review_screen.dart
+│       │   ├── address_screen.dart
+│       │   ├── appearance_screen.dart
+│       │   ├── cart_screen.dart
+│       │   ├── checkout_screen.dart
+│       │   ├── favorites_screen.dart
+│       │   ├── help_support_screen.dart
+│       │   ├── home_screen.dart
+│       │   ├── location_screen.dart
+│       │   ├── notifications_screen.dart
+│       │   ├── order_config_screen.dart
+│       │   ├── order_history_screen.dart
+│       │   ├── payment_methods_screen.dart
+│       │   ├── payments_screen.dart
+│       │   ├── payment_success_screen.dart
+│       │   ├── personal_info_screen.dart
+│       │   ├── privacy_security_screen.dart
+│       │   ├── product_detail_screen.dart
+│       │   ├── reviews_screen.dart
+│       │   └── wishlist_screen.dart
+│       │
+│       ├── widgets/         # Reusable widgets
+│       ├── routes/          # Navigation/routing configuration
+│       └── main.dart        # Application entry point
+│
+├── assets/                   # Static assets (images, fonts, etc.)
+│
+├── builds/                   # Build outputs
+│   └── apk/                 # APK files
+│
+├── docs/                     # Documentation
+│
+├── ios_instructions/         # iOS specific instructions
+│
+├── appium_tests/            # Appium test files
+│
+├── test/                     # Unit and widget tests
+│
+├── video/                    # Video assets or recordings
+│
+├── .flutter-plugins-dependencies
+├── .gitignore
+├── .metadata
+├── analysis_options.yaml    # Dart analysis options
+├── firebase_options.dart    # Firebase configuration
+├── firebase_setup.md        # Firebase setup instructions
+├── firestore.rules          # Firestore security rules
+├── laza_ecommerce.iml
+├── ProjectStructure.txt
+├── pubspec.lock
+├── pubspec.yaml             # Dependencies and project metadata
+├── README.md
+└── stages.md                # Development stages/progress
 
 ### Key Modules
 
